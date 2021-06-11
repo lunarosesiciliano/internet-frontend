@@ -21,7 +21,7 @@ export default class SignupForm extends Component {
     return (
       <div className="SignupDiv">
         <form onSubmit={this.handleSubmit} className="SignupForm">
-          <h1>Sign Up! </h1>
+          <h1>Sign Up</h1>
           <label>Username</label>
           <input
             type="text"
@@ -45,6 +45,7 @@ export default class SignupForm extends Component {
           <p>Already have an account?</p>
           <Link to="/login">Login!</Link>
         </form>
+        <h1>???</h1>
       </div>
     );
   }

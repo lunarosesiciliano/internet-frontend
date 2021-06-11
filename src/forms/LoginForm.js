@@ -12,8 +12,9 @@ export default function LoginForm({ login, error }) {
 
   return (
     <div className="LoginDiv">
+      <h1>???</h1>
       <form onSubmit={handleSubmit} className="LoginForm">
-        <h1>Login!</h1>
+        <h1>Log in</h1>
         <label>Username</label>
         <input
           name="username"

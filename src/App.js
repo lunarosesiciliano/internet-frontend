@@ -3,9 +3,8 @@ import React, { Component } from "react";
 import SignupForm from "./forms/SignupForm";
 import LoginForm from "./forms/LoginForm.js";
 import HomePage from "./Pages/HomePage.js";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
-export default class App extends Component {
+import { Switch, Route, withRouter } from "react-router-dom";
+class App extends Component {
   state = {
     user: {},
     error: "",
@@ -75,6 +74,7 @@ export default class App extends Component {
           this.setState({
             user: result.user,
           });
+          this.props.history.push("/");
         } else {
           this.setState({
             error: result.error,
@@ -84,42 +84,46 @@ export default class App extends Component {
   };
 
   render() {
+    console.log(this.props);
     return (
-      <Router>
-        <div className="App">
-          {this.state.user.id ? (
-            <HomePage
-              user={this.state.user}
-              logout={this.logout}
-              error={this.state.error}
-              login={this.login}
+      <div className="App">
+        {this.state.user.id ? (
+          <Route
+            path="/"
+            exact
+            render={(props) => (
+              <HomePage
+                user={this.state.user}
+                logout={this.logout}
+                error={this.state.error}
+                login={this.login}
+              />
+            )}
+          />
+        ) : (
+          <>
+            <Route
+              path="/signup"
+              exact
+              render={(props) => <SignupForm {...props} signUp={this.signUp} />}
             />
-          ) : (
-            <>
+            <Switch>
               <Route
-                path="/signup"
+                path="/login"
                 exact
                 render={(props) => (
-                  <SignupForm {...props} signUp={this.signUp} />
+                  <LoginForm
+                    {...props}
+                    login={this.login}
+                    error={this.state.error}
+                  />
                 )}
               />
-              <Switch>
-                <Route
-                  path="/login"
-                  exact
-                  render={(props) => (
-                    <LoginForm
-                      {...props}
-                      login={this.login}
-                      error={this.state.error}
-                    />
-                  )}
-                />
-              </Switch>
-            </>
-          )}
-        </div>
-      </Router>
+            </Switch>
+          </>
+        )}
+      </div>
     );
   }
 }
+export default withRouter(App);

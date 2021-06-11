@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import SecondPage from "./SecondPage";
-import HomeBackground from "../Images/HomeBackground";
-export default function HomePage({ login, user }) {
+import PageTwoBackground from "../Images/PageTwoBackground";
+import ThirdPage from "./ThirdPage";
+
+export default function SecondPage({ login, user }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loggedIn, setLogin] = useState(false);
@@ -13,12 +14,11 @@ export default function HomePage({ login, user }) {
   return (
     <>
       {loggedIn ? (
-        <SecondPage user={user} />
+        <ThirdPage user={user} />
       ) : (
-        <div className="HomePage">
-          <HomeBackground />
-          <h1>Welcome to the Internet</h1>
-          <form onSubmit={handleSubmit} className="HomeLogin">
+        <div className="SecondPage">
+          <PageTwoBackground />
+          <form onSubmit={handleSubmit} className="SecondLogin">
             <h2>please log in ☺︎</h2>
             <label>username</label>
             <input

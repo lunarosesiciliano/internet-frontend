@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import SecondPage from "./SecondPage";
-import HomeBackground from "../Images/HomeBackground";
+import ThirdBackground from "../Images/ThirdBackground";
+import FourthPage from "./FourthPage";
+
 export default function HomePage({ login, user }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -11,15 +12,14 @@ export default function HomePage({ login, user }) {
     setLogin(true);
   };
   return (
-    <>
+    <div className="ThirdPage">
       {loggedIn ? (
-        <SecondPage user={user} />
+        <FourthPage />
       ) : (
-        <div className="HomePage">
-          <HomeBackground />
-          <h1>Welcome to the Internet</h1>
-          <form onSubmit={handleSubmit} className="HomeLogin">
-            <h2>please log in ☺︎</h2>
+        <>
+          <ThirdBackground />
+          <form onSubmit={handleSubmit} className="ThirdLogin">
+            <h2>3 </h2>
             <label>username</label>
             <input
               name="username"
@@ -36,8 +36,8 @@ export default function HomePage({ login, user }) {
             />
             <input type="submit" value="Login" className="LoginButton" />
           </form>
-        </div>
+        </>
       )}
-    </>
+    </div>
   );
 }
