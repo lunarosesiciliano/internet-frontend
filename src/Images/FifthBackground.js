@@ -12,7 +12,7 @@ export default function FifthBackground() {
     canvas.style("z-index", "-2");
   };
   const draw = (p5) => {
-    p5.background(0);
+    p5.background(0, 0, 200);
   };
   return (
     <div>

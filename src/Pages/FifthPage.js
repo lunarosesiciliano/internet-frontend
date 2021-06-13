@@ -69,35 +69,39 @@ export default function FifthPage({ login, user }) {
       ) : (
         <div className="FifthPage">
           <FifthBackground />
-          <Webcam
-            ref={webcamRef}
-            style={{
-              position: "absolute",
-              marginLeft: "auto",
-              marginRight: "auto",
-              left: 0,
-              right: 0,
-              textAlign: "center",
-              zIndex: 9,
-              width: 640,
-              height: 480,
-            }}
-          />
-          <canvas
-            ref={canvasRef}
-            className="Canvas"
-            style={{
-              position: "absolute",
-              marginLeft: "auto",
-              marginRight: "auto",
-              left: 0,
-              right: 0,
-              textAlign: "center",
-              zIndex: 9,
-              width: 640,
-              height: 480,
-            }}
-          />
+          <div className="Webcam">
+            <Webcam
+              ref={webcamRef}
+              style={{
+                position: "absolute",
+                marginTop: 50,
+                marginLeft: "auto",
+                marginRight: "auto",
+                left: 0,
+                right: 400,
+                textAlign: "center",
+                zIndex: 9,
+                width: 640,
+                height: 480,
+              }}
+            />
+            <canvas
+              ref={canvasRef}
+              className="Canvas"
+              style={{
+                position: "absolute",
+                marginTop: 50,
+                marginLeft: "auto",
+                marginRight: "auto",
+                left: 0,
+                right: 400,
+                textAlign: "center",
+                zIndex: 9,
+                width: 640,
+                height: 480,
+              }}
+            />
+          </div>
 
           <form onSubmit={handleSubmit} className="FifthLogin">
             <label>username</label>
