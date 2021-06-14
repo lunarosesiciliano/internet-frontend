@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 body {
   background-color: black;
 }
@@ -9,7 +10,13 @@ body {
   margin: auto;
   width: 60%;
 }
-
+.HomeHeader {
+  font-family: "Press Start 2P", cursive;
+}
+.HomeLabel {
+  font-family: "Press Start 2P", cursive;
+  margin: 10px;
+}
 .LoginForm {
   background-color: white;
   border: 2px solid rgb(255, 22, 22);
@@ -40,8 +47,8 @@ body {
   border: 4px solid blue;
 }
 .SecondPage {
-  margin: auto;
-  margin-top: 250px;
+  margin-top: 20px;
+  margin-left: 900px;
   background-color: rgba(122, 40, 255, 0.8);
   color: white;
   width: 25%;
@@ -57,6 +64,30 @@ body {
 }
 .SecondLogin input {
   margin: 10px;
+}
+.ThirdPage {
+  display: flex;
+  flex-direction: row-reverse;
+  margin: auto;
+}
+
+.ThirdLogin {
+  background: black;
+  color: white;
+  padding: 10px;
+  position: absolute;
+  left: 555px;
+  top: 600px;
+  border: 2px solid white;
+  width: 20%;
+  /* margin: 10px; */
+  border-radius: 2em;
+  text-align: center;
+  padding-top: 20px;
+  height: 15vh;
+}
+.ThirdLogin input {
+  margin: 5px;
 }
 h1 {
   margin: auto;

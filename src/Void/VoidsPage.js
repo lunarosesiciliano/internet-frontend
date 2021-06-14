@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import Header from "./Header";
-const voidsURL = "http://localhost:3000/voids";
-const moodsURL = "http://localhost:3000/moods";
 import VoidForm from "./VoidForm";
 import VoidContainer from "./VoidContainer";
+import VoidCSS from "./Void.module.css";
+const voidsURL = "http://localhost:3000/voids";
+const moodsURL = "http://localhost:3000/moods";
 
 export default class VoidsPage extends Component {
   state = {
@@ -32,13 +33,13 @@ export default class VoidsPage extends Component {
     fetch(`${voidsURL}/${voids.id}`, {
       method: "DELETE",
     });
-    const VoidCollection = this.state.voids.filter((vd) => vid !== voids);
+    const VoidCollection = this.state.voids.filter((vd) => vd !== voids);
     this.setState({ voids: VoidCollection });
   };
 
   render() {
     return (
-      <div className="voids-page">
+      <div className={VoidCSS.body}>
         <Header />
         <VoidForm moods={this.state.moods} addVoids={this.addVoids} />
         <VoidContainer voids={this.state.voids} delete={this.handleDelete} />

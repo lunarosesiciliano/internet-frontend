@@ -17,16 +17,16 @@ export default function HomePage({ login, user }) {
       ) : (
         <div className="HomePage">
           <HomeBackground />
-          <h1>Welcome to the Internet</h1>
+          <h1 className="HomeHeader">Welcome to the Internet</h1>
           <form onSubmit={handleSubmit} className="HomeLogin">
-            <h2>please log in ☺︎</h2>
-            <label>username</label>
+            <h2 className="HomeHeader">please log in ☺︎</h2>
+            <label className="HomeLabel">username</label>
             <input
               name="username"
               value={username}
               onChange={(event) => setUsername(event.target.value)}
             />
-            <label>Password</label>
+            <label className="HomeLabel">Password</label>
             <input
               type="password"
               name="password"

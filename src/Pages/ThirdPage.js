@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ThirdBackground from "../Images/ThirdBackground";
+import VoidsPage from "../Void/VoidsPage";
 import FourthPage from "./FourthPage";
 
 export default function HomePage({ login, user }) {
@@ -12,21 +13,22 @@ export default function HomePage({ login, user }) {
     setLogin(true);
   };
   return (
-    <div className="ThirdPage">
+    <>
       {loggedIn ? (
-        <FourthPage />
+        <FourthPage user={user} />
       ) : (
-        <>
+        <div className="ThirdPage">
           <ThirdBackground />
+          <VoidsPage />
           <form onSubmit={handleSubmit} className="ThirdLogin">
-            <h2>3 </h2>
+            {/* <p>...</p> */}
             <label>username</label>
             <input
               name="username"
               value={username}
               onChange={(event) => setUsername(event.target.value)}
             />
-            <label>Password</label>
+            <label>password</label>
             <input
               type="password"
               name="password"
@@ -34,10 +36,14 @@ export default function HomePage({ login, user }) {
               onChange={(event) => setPassword(event.target.value)}
               placeholder=""
             />
-            <input type="submit" value="Login" className="LoginButton" />
+            <input
+              type="submit"
+              value="Login... :)"
+              className="ThirdLoginButton"
+            />
           </form>
-        </>
+        </div>
       )}
-    </div>
+    </>
   );
 }

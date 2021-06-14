@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import FifthPage from "./FifthPage";
+import FourthBackground from "../Images/FourthBackground";
 
 export default function FourthPage({ login, user }) {
   const [username, setUsername] = useState("");
@@ -15,9 +16,10 @@ export default function FourthPage({ login, user }) {
       {loggedIn ? (
         <FifthPage user={user} />
       ) : (
-        <div className="SecondPage">
-          <form onSubmit={handleSubmit} className="SecondLogin">
-            <h2>please log in ☺︎</h2>
+        <div className="FourthPage">
+          <FourthBackground />
+          <form onSubmit={handleSubmit} className="FourthLogin">
+            <h2>are you tired yet?</h2>
             <label>username</label>
             <input
               name="username"
@@ -32,7 +34,7 @@ export default function FourthPage({ login, user }) {
               onChange={(event) => setPassword(event.target.value)}
               placeholder=""
             />
-            <input type="submit" value="Login" className="LoginButton" />
+            <input type="submit" value="Help Me" className="LoginButton" />
           </form>
         </div>
       )}

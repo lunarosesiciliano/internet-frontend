@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import VoidCSS from "./Void.module.css";
+
 const voidsURL = "http://localhost:3000/voids";
 
 export default function VoidForm(props) {
@@ -6,31 +8,36 @@ export default function VoidForm(props) {
   const [message, setMessage] = useState("");
   const [mood, setMood] = useState("");
 
-  const handleSubmit = (e) =>{
+  const handleSubmit = (e) => {
     e.preventDefault();
-    fetch(voidsURL,{
+    fetch(voidsURL, {
       method: "POST",
       headers: {
         Accept: "application/json",
-        "Content-Type": "application/json"
-      }
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: name,
+        message: message,
+        mood: mood,
+      }),
     })
-    .then((response)=> response.json())
-    .then((v)=>props.addVoids(v))
+      .then((response) => response.json())
+      .then((v) => props.addVoids(v));
 
-    setName("")
-    setMessage("")
-    setMood("")
-  }
+    setName("");
+    setMessage("");
+    setMood("");
+  };
   return (
-    <div className="void-form-div">
-      <form method="POST" onSubmit={handleSubmit} className="void-form">
+    <div className={VoidCSS.voidFormDiv}>
+      <form method="POST" onSubmit={handleSubmit} className={VoidCSS.voidForm}>
         <p>name:</p>
         <input
           value={name}
           onChange={(e) => setName(e.target.value)}
           type="text"
-          className="name-input"
+          className={VoidCSS.nameInput}
           placeholder="............."
           required
         ></input>
@@ -38,7 +45,7 @@ export default function VoidForm(props) {
         <textarea
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          className="textarea"
+          className={VoidCSS.textarea}
           name="message"
           rows="6"
           cols="50"
@@ -51,19 +58,19 @@ export default function VoidForm(props) {
           value={mood}
           onChange={(e) => setMood(e.target.value)}
           name="mood"
-          className="dropdown"
+          className={VoidCSS.dropdown}
           required
         >
-          <option className="selected-option" selected hidden required>
+          <option className={VoidCSS.selectedOption} selected hidden required>
             ~*-/̷̲̙̰̠͌͊͆/̶͕̏ ̶̳͕͍̒/̵̻̮͕͘.̶͚̥̊̎̐ ̴̢͖͊́̈́ͅ/̸͍͗�̸̲̙̹͒̿̆̔�̴̡̠̪̩̀.̶̥̥͐̈́͠f̸̪̿/̶̫̋̓?̸̠̂m̴̥̩̿̈́͆͒ ̶̬̰̠̉ơ̶̡͚̪͆̍ ̴̡̘͗̐o̶͈͕̖͉͋̿ ̷͖̃̇d̸̜̠̥̫͋̎̅ ̸̞̝̱̈́͋́͜(̵̥́̈́)̶̘͑͗͠;̷̢͈̈́͆̆/̵̞͎͐́̓͝ ̷̖̺͙͑̅/̸̼̗̭̰̑̈́͗̆/̵̱̾̏̋͝/̸̯̍̽~̶̡͎̉͝#̶̳͙̟͊͒̚$̴̧͇̃ȉ̶̝͙̈́̂̕x̶̳̗̑̌͘͜X̶̧̰̾{" "}
           </option>{" "}
           {props.moods.map((mood) => {
             return <option value={mood.id}>{mood.feeling}</option>;
           })}{" "}
         </select>
-        <div className="gif-container">
+        <div className={VoidCSS.gifContainer}>
           <img
-            className="smile-gif"
+            className={VoidCSS.smileGif}
             src="https://i.imgur.com/yJ3cnoO.gif"
             alt="happy sad gif"
             title=":)"
@@ -73,12 +80,9 @@ export default function VoidForm(props) {
           name="submit"
           type="submit"
           value="scream into the digital abyss"
-          className="submit-button"
+          className={VoidCSS.submitButton}
         ></input>
       </form>
     </div>
   );
 }
-
-export default VoidForm;
-

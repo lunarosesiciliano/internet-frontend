@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap");
+
+.body {
+  /* background-color: black; */
+  color: white;
+  font-family: "Cutive Mono", monospace;
+  margin: auto;
+  width: 50%;
+  text-align: center;
+  padding: 10px;
+}
+title {
+  font-family: "Cutive Mono", monospace;
+}
+option {
+  font-family: "Cutive Mono", monospace;
+}
+li {
+  list-style-type: none;
+  padding: 5px;
+}
+.void-form {
+  background-color: black;
+  padding: 15px;
+  display: block;
+  border-style: solid;
+  border-radius: 2em;
+  border-color: white;
+  width: -moz-fit-content;
+  text-align: center;
+  display: block;
+  margin-top: 5px;
+  margin-left: 460px;
+  margin-right: auto;
+}
+
+.voidCard {
+  background-color: black;
+  margin: auto;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  border-style: solid;
+  border-radius: 2em;
+  border-color: white;
+  padding: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  width: -moz-fit-content;
+  width: fit-content;
+  max-width: 80%;
+  margin: 10px;
+  margin-left: 30px;
+  word-wrap: inherit;
+}
+.voidCard:hover {
+  background-color: black;
+  color: rgb(102, 255, 0);
+  border-style: double;
+  border-color: red;
+  transition: all 1250ms cubic-bezier(0.19, 0.5, 0.1, 0.2);
+  outline-offset: 0px;
+}
+
+.voidFormDiv {
+  background-color: black;
+  border: 2px solid white;
+  margin: auto;
+  border-radius: 2em;
+  padding: 10px;
+  width: 70%;
+}
+.deleteButton:focus {
+  background-color: black;
+  color: white;
+  border-style: double;
+  border-color: white;
+}
+
+.voidContainer {
+  position: absolute;
+  width: 420px;
+  padding: 10px;
+  top: 100px;
+  left: 0;
+  height: 60vh;
+  overflow: overlay;
+}
+
+.messageInput {
+  width: 90px;
+  height: 390px;
+  border: 1px solid #999999;
+  padding: 5px;
+}
+
+.nameInput {
+  font-family: "Cutive Mono", monospace;
+  padding-left: 5px;
+  border-radius: 1.5rem;
+  height: 25px;
+  background-color: rgb(0, 255, 0);
+  text-align: center;
+}
+
+.header {
+  /* display: block; */
+  /* margin-top: 5px;
+  margin-left: 440px;
+  margin-right: auto; */
+  margin: auto;
+  /* width: 50%; */
+}
+.textarea {
+  background-color: rgba(0, 0, 255, 0.747);
+  color: white;
+
+  border-radius: 1.5em;
+  text-align: center;
+}
+
+.voidColumnGrid {
+  height: min-content;
+}
+.submitButton {
+  cursor: crosshair;
+  border-style: solid;
+  border-color: rgb(0, 255, 0);
+  border-radius: 1.5em;
+  padding: 5px;
+  width: 250px;
+  font-family: "Cutive Mono", monospace;
+  font-style: italic;
+  outline-color: rgba(255, 255, 255, 0.5);
+  box-shadow: inset 0 0 20px rgba(212, 0, 0, 0);
+  padding-bottom: 5px;
+  background-color: rgb(235, 95, 235);
+  color: white;
+}
+.submitButton:focus {
+  background-color: black;
+  color: white;
+  border-style: double;
+  border-color: red;
+  transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+  outline-offset: 0px;
+}
+
+.submitButton:hover {
+  border: 1px solid;
+  box-shadow: inset 0 0 20px rgb(0, 26, 255), 0 0 20px rgb(255, 0, 0);
+  outline-color: rgba(255, 255, 255, 0);
+  outline-offset: 15px;
+  text-shadow: 1px 1px 2px #427388;
+}
+
+.dropdown {
+  width: 240px;
+  height: 30px;
+  border-radius: 2rem;
+  background-color: rgb(255, 0, 0);
+}
+
+.dropdown:focus {
+  background-color: black;
+  color: rgb(102, 255, 0);
+  border-style: double;
+  border-color: red;
+  transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+  outline-offset: 0px;
+}
+
+.dropdown:hover {
+  border: 1px solid;
+  box-shadow: inset 0 0 20px rgb(0, 26, 255), 0 0 20px rgb(255, 0, 0);
+  outline-color: rgb(0, 255, 0);
+  outline-offset: 15px;
+  text-shadow: 1px 1px 2px #427388;
+}
+
+.textarea:focus {
+  background-color: black;
+  color: rgb(102, 255, 0);
+  border-style: double;
+  border-color: red;
+  transition: all 1250ms cubic-bezier(0.19, 0.5, 0.1, 0.2);
+  outline-offset: 0px;
+}
+
+.textarea:hover {
+  border: 1px solid;
+  box-shadow: inset 0 0 20px rgb(0, 26, 255), 0 0 20px rgb(255, 0, 0);
+  outline-offset: 15px;
+  text-shadow: 1px 1px 2px #427388;
+}
+.deleteButton {
+  border-radius: 1.5em;
+  border-style: solid;
+  border-color: red;
+  display: inline;
+  height: 30px;
+  width: 30px;
+}
+.deleteButton:hover {
+  border: 1px solid;
+  box-shadow: inset 0 0 20px rgb(0, 26, 255), 0 0 20px rgb(255, 0, 0);
+  outline-offset: 15px;
+  text-shadow: 1px 1px 2px #427388;
+}
+.smileGif {
+  height: 40px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
