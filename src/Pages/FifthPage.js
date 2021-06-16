@@ -5,7 +5,7 @@ import * as tf from "@tensorflow/tfjs";
 import * as faceMesh from "@tensorflow-models/facemesh";
 import Webcam from "react-webcam";
 import { drawMesh } from "../FaceUtilities";
-export default function FifthPage({ login, user }) {
+export default function FifthPage({ logout, user }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loggedIn, setLogin] = useState(false);
@@ -65,7 +65,7 @@ export default function FifthPage({ login, user }) {
   return (
     <>
       {loggedIn ? (
-        <SixthPage user={user} />
+        <SixthPage user={user} logout={logout} />
       ) : (
         <div className="FifthPage">
           <FifthBackground />

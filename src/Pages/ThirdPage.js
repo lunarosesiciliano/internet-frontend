@@ -3,7 +3,7 @@ import ThirdBackground from "../Images/ThirdBackground";
 import VoidsPage from "../Void/VoidsPage";
 import FourthPage from "./FourthPage";
 
-export default function HomePage({ login, user }) {
+export default function HomePage({ user, logout }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loggedIn, setLogin] = useState(false);
@@ -15,13 +15,12 @@ export default function HomePage({ login, user }) {
   return (
     <>
       {loggedIn ? (
-        <FourthPage user={user} />
+        <FourthPage user={user} logout={logout} />
       ) : (
         <div className="ThirdPage">
           <ThirdBackground />
           <VoidsPage />
           <form onSubmit={handleSubmit} className="ThirdLogin">
-            {/* <p>...</p> */}
             <label>username</label>
             <input
               name="username"

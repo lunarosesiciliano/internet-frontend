@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import SecondPage from "./SecondPage";
 import HomeBackground from "../Images/HomeBackground";
-export default function HomePage({ login, user }) {
+export default function HomePage({ logout, user }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loggedIn, setLogin] = useState(false);
@@ -13,11 +13,11 @@ export default function HomePage({ login, user }) {
   return (
     <>
       {loggedIn ? (
-        <SecondPage user={user} />
+        <SecondPage user={user} logout={logout} />
       ) : (
         <div className="HomePage">
           <HomeBackground />
-          <h1 className="HomeHeader">Welcome to the Internet</h1>
+          <h1 className="HomeHeader">Welcome to the Internet!</h1>
           <form onSubmit={handleSubmit} className="HomeLogin">
             <h2 className="HomeHeader">please log in ☺︎</h2>
             <label className="HomeLabel">username</label>

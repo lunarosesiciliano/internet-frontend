@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import PageTwoBackground from "../Images/PageTwoBackground";
 import ThirdPage from "./ThirdPage";
 
-export default function SecondPage({ login, user }) {
+export default function SecondPage({ user, logout }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loggedIn, setLogin] = useState(false);
@@ -14,7 +14,7 @@ export default function SecondPage({ login, user }) {
   return (
     <>
       {loggedIn ? (
-        <ThirdPage user={user} />
+        <ThirdPage user={user} logout={logout} />
       ) : (
         <div className="SecondPage">
           <PageTwoBackground />
@@ -26,7 +26,7 @@ export default function SecondPage({ login, user }) {
               value={username}
               onChange={(event) => setUsername(event.target.value)}
             />
-            <label>Password</label>
+            <label>password</label>
             <input
               type="password"
               name="password"
