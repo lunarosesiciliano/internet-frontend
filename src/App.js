@@ -4,6 +4,11 @@ import SignupForm from "./forms/SignupForm";
 import LoginForm from "./forms/LoginForm.js";
 import HomePage from "./Pages/HomePage.js";
 import { Switch, Route, withRouter } from "react-router-dom";
+import SecondPage from "./Pages/SecondPage";
+import ThirdPage from "./Pages/ThirdPage";
+import FourthPage from "./Pages/FourthPage";
+import FifthPage from "./Pages/FifthPage";
+import SixthPage from "./Pages/SixthPage";
 class App extends Component {
   state = {
     user: {},
@@ -88,18 +93,81 @@ class App extends Component {
     return (
       <div className="App">
         {this.state.user.id ? (
-          <Route
-            path="/"
-            exact
-            render={(props) => (
-              <HomePage
-                user={this.state.user}
-                logout={this.logout}
-                error={this.state.error}
-                login={this.login}
-              />
-            )}
-          />
+          <Switch>
+            <Route
+              path="/"
+              exact
+              render={(props) => (
+                <HomePage
+                  user={this.state.user}
+                  logout={this.logout}
+                  error={this.state.error}
+                  login={this.login}
+                />
+              )}
+            />
+
+            <Route
+              path="/cosine"
+              exact
+              render={(props) => (
+                <SecondPage
+                  user={this.state.user}
+                  logout={this.logout}
+                  error={this.state.error}
+                  login={this.login}
+                />
+              )}
+            />
+            <Route
+              path="/void"
+              exact
+              render={(props) => (
+                <ThirdPage
+                  user={this.state.user}
+                  logout={this.logout}
+                  error={this.state.error}
+                  login={this.login}
+                />
+              )}
+            />
+            <Route
+              path="/u4ia"
+              exact
+              render={(props) => (
+                <FourthPage
+                  user={this.state.user}
+                  logout={this.logout}
+                  error={this.state.error}
+                  login={this.login}
+                />
+              )}
+            />
+            <Route
+              path="/chatroom"
+              exact
+              render={(props) => (
+                <FifthPage
+                  user={this.state.user}
+                  logout={this.logout}
+                  error={this.state.error}
+                  login={this.login}
+                />
+              )}
+            />
+            <Route
+              path="/universe"
+              exact
+              render={(props) => (
+                <SixthPage
+                  user={this.state.user}
+                  logout={this.logout}
+                  error={this.state.error}
+                  login={this.login}
+                />
+              )}
+            />
+          </Switch>
         ) : (
           <>
             <Route
@@ -126,4 +194,5 @@ class App extends Component {
     );
   }
 }
+
 export default withRouter(App);

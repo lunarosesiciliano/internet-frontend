@@ -36,11 +36,15 @@ export default function FourthBackground() {
 
       p5.stroke(r, g, b);
       for (let x = 0; x < cols; x++) {
-        p5.vertex(x * scl, y * scl, p5.map(p5.noise(x, y), -1, 1, -100, 200));
+        p5.vertex(
+          x * scl,
+          y * scl,
+          p5.map(p5.noise(xoff, yoff), -2, 1, -200, 300)
+        );
         p5.vertex(
           x * scl,
           (y + 1) * scl,
-          p5.map(p5.noise(xoff, yoff), 0, 3, -5, 60) + 10
+          p5.map(p5.noise(xoff, yoff), 10, 30, -5, 60) + 10
         );
         yoff -= 0.8;
       }

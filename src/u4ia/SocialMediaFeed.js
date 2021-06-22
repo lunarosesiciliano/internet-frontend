@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import SMForm from "../u4ia/SMForm";
 import SocialMediaContainer from "../u4ia/SocialMediaContainer";
-import U4iaCSS from "./U4ia.module.css";
 
 export default class SocialMediaFeed extends Component {
   render() {

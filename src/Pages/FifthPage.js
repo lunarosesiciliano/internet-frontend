@@ -1,21 +1,19 @@
 import React, { useState, useRef } from "react";
-import FifthBackground from "../Images/FifthBackground";
+// import FifthBackground from "../Images/FifthBackground";
 import SixthPage from "./SixthPage";
 import * as tf from "@tensorflow/tfjs";
 import * as faceMesh from "@tensorflow-models/facemesh";
 import Webcam from "react-webcam";
 import { drawMesh } from "../FaceUtilities";
+import Chatbox from "../Chatbox";
+import { Link } from "react-router-dom";
+import FifthBackground from "../Images/FifthBackground";
+
 export default function FifthPage({ logout, user }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [loggedIn, setLogin] = useState(false);
   const webcamRef = useRef(null);
   const canvasRef = useRef(null);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setLogin(true);
-  };
 
   //load faceMesh
   const runFaceMesh = async () => {
@@ -53,7 +51,7 @@ export default function FifthPage({ logout, user }) {
       // make detections
 
       const face = await net.estimateFaces(video);
-      console.log(face);
+      // console.log(face);
       const ctx = canvasRef.current.getContext("2d");
       drawMesh(face, ctx);
 
@@ -63,65 +61,64 @@ export default function FifthPage({ logout, user }) {
   runFaceMesh();
 
   return (
-    <>
-      {loggedIn ? (
-        <SixthPage user={user} logout={logout} />
-      ) : (
-        <div className="FifthPage">
-          <FifthBackground />
-          <div className="Webcam">
-            <Webcam
-              ref={webcamRef}
-              style={{
-                position: "absolute",
-                marginTop: 50,
-                marginLeft: "auto",
-                marginRight: "auto",
-                left: 0,
-                right: 400,
-                textAlign: "center",
-                zIndex: 9,
-                width: 640,
-                height: 480,
-              }}
-            />
-            <canvas
-              ref={canvasRef}
-              className="Canvas"
-              style={{
-                position: "absolute",
-                marginTop: 50,
-                marginLeft: "auto",
-                marginRight: "auto",
-                left: 0,
-                right: 400,
-                textAlign: "center",
-                zIndex: 9,
-                width: 640,
-                height: 480,
-              }}
-            />
-          </div>
-
-          <form onSubmit={handleSubmit} className="FifthLogin">
-            <label>username</label>
-            <input
-              name="username"
-              value={username}
-              onChange={(event) => setUsername(event.target.value)}
-            />
-            <label>Password</label>
-            <input
-              type="password"
-              name="password"
-              value={password}
-              onChange={(event) => setPassword(event.target.value)}
-              placeholder=""
-            />
+    <div className="FifthPage">
+      <div className="FithForm">
+        <form className="FifthLogin">
+          <label>username</label>
+          <input
+            name="username"
+            value={username}
+            onChange={(event) => setUsername(event.target.value)}
+          />
+          <label>Password</label>
+          <input
+            type="password"
+            name="password"
+            value={password}
+            onChange={(event) => setPassword(event.target.value)}
+            placeholder=""
+          />
+          <Link to="/universe">
             <input type="submit" value="Login" className="LoginButton" />
-          </form>
-        </div>
-      )}
-    </>
+          </Link>
+        </form>
+        <FifthBackground />
+      </div>
+      <div className="Chatroom">
+        <Chatbox />
+
+        <Webcam
+          ref={webcamRef}
+          className="Webcam"
+          style={{
+            position: "absolute",
+
+            marginLeft: "auto",
+            marginRight: "auto",
+            left: 0,
+            right: 400,
+            textAlign: "center",
+            zIndex: 9,
+            width: 640,
+            height: 480,
+          }}
+        />
+        <canvas
+          ref={canvasRef}
+          className="Webcam"
+          style={{
+            position: "absolute",
+            marginLeft: "auto",
+            marginRight: "auto",
+            left: 0,
+            right: 400,
+            textAlign: "center",
+            zIndex: 9,
+            width: 640,
+            height: 480,
+          }}
+        />
+      </div>
+    </div>
   );
 }

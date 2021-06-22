@@ -1,30 +1,42 @@
 import React from "react";
 import Sketch from "react-p5";
-
-export default function PageTwoBackground() {
+let gap = 15;
+let cirNum = 360;
+let cirSize = 150;
+let angle;
+export default function HomeBackground() {
   const setup = (p5, canvasParentRef) => {
-    const canvas = p5.createCanvas(p5.windowWidth, p5.windowHeight);
-    // .parent(canvasParentRef);
-    // p5.angleMode(p5.DEGREES);
-    p5.background(255);
+    const canvas = p5
+      .createCanvas(p5.windowWidth, p5.windowHeight, p5.WEBGL)
+      .parent(canvasParentRef);
+    p5.angleMode(p5.DEGREES);
 
     canvas.position(0, 0);
     canvas.style("z-index", "-2");
+    // p5.background(0);
   };
 
   const draw = (p5) => {
-    p5.translate(p5.mouseX, p5.mouseY);
-    let scalar = p5.mouseX / 50;
-    p5.fill(0);
-    if (p5.mouseIsPressed) {
-      p5.stroke(0, 0, 255);
-    } else {
-      p5.stroke(0, 255, 0);
-      p5.fill(255);
+    p5.push();
+    p5.translate(0, 0);
+    p5.rotate(angle);
+    p5.rotateX(angle);
+    angle = p5.map(p5.mouseX, 0, p5.width, -1, 1);
+    angle = angle++;
+    p5.background(0);
+    p5.noFill();
+    p5.stroke(255);
+    p5.strokeWeight(1);
+    for (let i = 0; i < cirNum; i++) {
+      p5.stroke(255);
+      p5.circle(0, 0, cirSize + gap * i, cirSize + gap * i);
+      p5.stroke(0);
+      p5.strokeWeight(2);
+      p5.arc(0, 0, cirSize + gap * i, cirSize + gap * i, 10, 360 - i / 2);
+      // p5.arc(0, 0, cirSize + gap * i, cirSize + gap * i, 10, 360 - i * 5);
+      // p5.circle(2, 2, cirSize + gap * i * 2, cirSize + gap / i);
     }
-    p5.scale(scalar);
-    p5.strokeWeight(1.0 / scalar);
-    p5.rect(-15, -15, 30, 30);
+    p5.pop();
   };
 
   return (

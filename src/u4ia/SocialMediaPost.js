@@ -1,6 +1,6 @@
 import React from "react";
 import U4iaCSS from "./U4ia.module.css";
-// import like from "../images/like.png";
+import like from "../Images/like.png";
 
 export default function SocialMediaPost(props) {
   const handleClick = (e) => {
@@ -14,9 +14,15 @@ export default function SocialMediaPost(props) {
         <img
           src={props.post.featured_image}
           className={U4iaCSS.FeaturedImage}
+          alt={""}
         />
         <li>
-          <img src={""} onClick={handleClick} className={U4iaCSS.LikeButton} />
+          <img
+            src={like}
+            onClick={handleClick}
+            className={U4iaCSS.LikeButton}
+            alt={""}
+          />
           <h3 className="U4iaH3">{props.post.likes}</h3>
         </li>
       </ul>

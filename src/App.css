@@ -1,7 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300&family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Special+Elite&display=swap");
 
+a {
+  color: red;
+}
 h1 {
   margin: auto;
   margin-top: 50px;
@@ -11,11 +15,13 @@ body {
 }
 .LoginDiv {
   margin: auto;
-  width: 60%;
+  width: 30%;
+  font-family: "Special Elite", cursive;
 }
 .SignupDiv {
   margin: auto;
-  width: 60%;
+  width: 30%;
+  font-family: "Special Elite", cursive;
 }
 .HomeHeader {
   font-family: "Press Start 2P", cursive;
@@ -24,35 +30,57 @@ body {
   font-family: "Press Start 2P", cursive;
   margin: 10px;
 }
+.BorderGradient {
+  margin: auto;
+  margin-top: 250px;
+  max-width: 300px;
+  padding: 5px;
+  position: relative;
+  background: linear-gradient(to right, red, green, blue);
+  border-radius: 1.2em;
+  padding: 1px;
+}
+.BorderGradientSignup {
+  margin: auto;
+  margin-top: 250px;
+  max-width: 300px;
+  padding: 5px;
+  position: relative;
+  background: linear-gradient(to right, red, green, blue);
+  border-radius: 1.2em;
+  padding: 1px;
+}
 .LoginForm {
   background-color: white;
-  border: 2px solid rgb(255, 22, 22);
   padding: 10px;
   text-align: center;
-  margin: 100px;
-  margin-top: 150px;
+  margin: 10px;
+  margin-top: 10px;
+  border-radius: 1.2em;
 }
 .SignupForm {
   background-color: white;
-  border: 2px solid rgb(255, 22, 22);
+
   padding: 10px;
   text-align: center;
-  margin: 100px;
-  margin-top: 150px;
+  margin: 10px;
+  margin-top: 10px;
 }
 .HomeLogin {
   align-content: center;
   padding: 30px;
   margin: auto;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0);
+  color: white;
 }
 .HomePage {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0);
+  color: white;
   width: 50%;
   margin: auto;
   margin-top: 200px;
   text-align: center;
-  border: 4px solid blue;
+  box-shadow: 1px 1px 1px black;
 }
 .SecondPage {
   margin-top: 20px;
@@ -123,12 +151,43 @@ body {
   border-radius: 1em;
   background-color: rgb(176, 241, 201);
 }
+.FifPage {
+  padding: 20px;
+}
 .FifthLogin {
   color: white;
   margin: auto;
   width: 50%;
   border: 3px dashed white;
+  margin-bottom: 20px;
 }
 .FifthLogin input {
   margin: 10px;
+}
+.ActionCable {
+  width: 500px;
+  height: 400px;
+  max-width: 500;
+  max-height: 400;
+  margin-left: 900px;
+  margin-top: 50px;
+  border: solid 3px white;
+  text-align: left;
+  padding: 10px;
+  overflow-y: auto;
+  word-break: break-all;
+  color: white;
+  font-family: "Special Elite", cursive;
+}
+
+.Chatroom {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column-reverse;
+  margin-top: 10px;
+}
+.LogoutButton {
+  color: red;
+  background-color: white;
+  z-index: 4;
 }

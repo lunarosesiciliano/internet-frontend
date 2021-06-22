@@ -1,48 +1,39 @@
 import React, { useState } from "react";
 import ThirdBackground from "../Images/ThirdBackground";
 import VoidsPage from "../Void/VoidsPage";
-import FourthPage from "./FourthPage";
+import { Link } from "react-router-dom";
 
 export default function HomePage({ user, logout }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [loggedIn, setLogin] = useState(false);
-  console.log(user, username, password);
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setLogin(true);
-  };
+
   return (
-    <>
-      {loggedIn ? (
-        <FourthPage user={user} logout={logout} />
-      ) : (
-        <div className="ThirdPage">
-          <ThirdBackground />
-          <VoidsPage />
-          <form onSubmit={handleSubmit} className="ThirdLogin">
-            <label>username</label>
-            <input
-              name="username"
-              value={username}
-              onChange={(event) => setUsername(event.target.value)}
-            />
-            <label>password</label>
-            <input
-              type="password"
-              name="password"
-              value={password}
-              onChange={(event) => setPassword(event.target.value)}
-              placeholder=""
-            />
-            <input
-              type="submit"
-              value="Login... :)"
-              className="ThirdLoginButton"
-            />
-          </form>
-        </div>
-      )}
-    </>
+    <div className="ThirdPage">
+      <ThirdBackground />
+      <VoidsPage />
+      <form className="ThirdLogin">
+        <label>username</label>
+        <input
+          name="username"
+          value={username}
+          onChange={(event) => setUsername(event.target.value)}
+        />
+        <label>password</label>
+        <input
+          type="password"
+          name="password"
+          value={password}
+          onChange={(event) => setPassword(event.target.value)}
+          placeholder=""
+        />
+        <Link to="/u4ia">
+          <input
+            type="submit"
+            value="Login... :)"
+            className="ThirdLoginButton"
+          />
+        </Link>
+      </form>
+    </div>
   );
 }
