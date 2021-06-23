@@ -12,8 +12,58 @@ The Internet was created with a React front and and a Ruby on Rails back end. Fu
 
 # Code Example
 
+```
+const webcamRef = useRef(null);
+  const canvasRef = useRef(null);
+
+  //load faceMesh
+  const runFaceMesh = async () => {
+    const net = await faceMesh.load({
+      inputResolution: { width: 640, height: 480 },
+      scale: 0.8,
+    });
+    setInterval(() => {
+      detect(net);
+    }, 100);
+  };
+  //detect faceMesh function
+  const detect = async (net) => {
+    if (
+      typeof webcamRef.current !== "undefined" &&
+      webcamRef.current !== null &&
+      webcamRef.current.video.readyState === 4
+    ) {
+      // set video properties
+
+      const video = webcamRef.current.video;
+      const videoWidth = webcamRef.current.video.videoWidth;
+      const videoHeight = webcamRef.current.video.videoHeight;
+
+      // set video width
+
+      webcamRef.current.video.width = videoWidth;
+      webcamRef.current.video.height = videoHeight;
+
+      // set canvas width
+
+      canvasRef.current.width = videoWidth;
+      canvasRef.current.height = videoHeight;
+
+      // make detections
+
+      const face = await net.estimateFaces(video);
+      // console.log(face);
+      const ctx = canvasRef.current.getContext("2d");
+      drawMesh(face, ctx);
+
+      // get canvas context for drawing
+    }
+  };
+```
+
 # Demo
 
 # Contact
 
-joannsiciliano.dev@gmail.com
+email: joannsiciliano.dev@gmail.com
+linkdin: https://www.linkedin.com/in/joannsiciliano/
