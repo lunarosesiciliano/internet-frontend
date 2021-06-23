@@ -3,8 +3,8 @@ import Header from "./Header";
 import VoidForm from "./VoidForm";
 import VoidContainer from "./VoidContainer";
 import VoidCSS from "./Void.module.css";
-const voidsURL = "http://localhost:3000/voids";
-const moodsURL = "http://localhost:3000/moods";
+const voidsURL = "https://this-is-internet.herokuapp.com/voids";
+const moodsURL = "https://this-is-internet.herokuapp.com/moods";
 
 export default class VoidsPage extends Component {
   state = {

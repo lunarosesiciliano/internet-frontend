@@ -16,7 +16,7 @@ export default class Chatbox extends Component {
   }
 
   fetchMessages = () => {
-    fetch("http://localhost:3000/messages")
+    fetch("https://this-is-internet.herokuapp.com/messages")
       .then((response) => response.json())
       // .then((messages) => console.log(messages, "messages"));
       .then((messages) => this.setState({ messages: messages }));
@@ -54,7 +54,7 @@ export default class Chatbox extends Component {
       },
       body: JSON.stringify(messageObj),
     };
-    fetch("http://localhost:3000/messages", fetchObj);
+    fetch("https://this-is-internet.herokuapp.com/messages", fetchObj);
     e.target.reset();
   };
 

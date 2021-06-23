@@ -8,7 +8,7 @@ export default class HomePage extends Component {
   };
 
   componentDidMount() {
-    fetch("http://localhost:3000/social_media_posts", {
+    fetch("https://this-is-internet.herokuapp.com/social_media_posts", {
       method: "GET",
       headers: { "Content-Type": "application/json" },
     }).then((response) =>
@@ -18,15 +18,18 @@ export default class HomePage extends Component {
 
   addLike = (smp) => {
     let newLikes = smp.likes + 1;
-    fetch("http://localhost:3000/social_media_posts/" + smp.id, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        social_media_post: { likes: newLikes },
-      }),
-    })
+    fetch(
+      "https://this-is-internet.herokuapp.com/social_media_posts/" + smp.id,
+      {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          social_media_post: { likes: newLikes },
+        }),
+      }
+    )
       .then((response) => response.json())
       .then((smp) => {
         let SMPosts = this.state.SMPosts.map((post) => {

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import VoidCSS from "./Void.module.css";
 
-const voidsURL = "http://localhost:3000/voids";
+const voidsURL = "https://this-is-internet.herokuapp.com/voids";
 
 export default function VoidForm(props) {
   const [name, setName] = useState("");

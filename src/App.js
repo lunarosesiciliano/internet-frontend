@@ -26,7 +26,7 @@ class App extends Component {
   validateUser = () => {
     const token = localStorage.getItem("token");
     if (token) {
-      fetch("http://localhost:3000/profile", {
+      fetch("https://this-is-internet.herokuapp.com/profile", {
         method: "GET",
         headers: { Authorization: `Bearer ${token}` },
       })
@@ -42,7 +42,7 @@ class App extends Component {
   };
 
   signUp = (user) => {
-    fetch("http://localhost:3000/users", {
+    fetch("https://this-is-internet.herokuapp.com/users", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -60,7 +60,7 @@ class App extends Component {
   };
 
   login = (username, password) => {
-    fetch("http://localhost:3000/login", {
+    fetch("https://this-is-internet.herokuapp.com/login", {
       method: "POST",
       headers: {
         "Content-type": "application/json",

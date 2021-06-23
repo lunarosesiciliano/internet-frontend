@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { storage } from "../firebase/firebase";
 import U4iaCSS from "./U4ia.module.css";
 
-const SMPostURL = "http://localhost:3000/social_media_posts";
+const SMPostURL = "https://this-is-internet.herokuapp.com/social_media_posts";
 
 export default function SMForm(props) {
   const [message, setMessage] = useState("");
