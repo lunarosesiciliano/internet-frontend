@@ -7,7 +7,9 @@ export default class Chatbox extends Component {
     this.state = {
       messages: [],
     };
-    this.cable = actionCable.createConsumer("ws://localhost:3000/cable");
+    this.cable = actionCable.createConsumer(
+      "wss://this-is-internet.herokuapp.com/cable"
+    );
   }
 
   componentDidMount() {
