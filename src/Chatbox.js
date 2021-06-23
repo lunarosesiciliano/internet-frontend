@@ -6,6 +6,7 @@ export default class Chatbox extends Component {
     super();
     this.state = {
       messages: [],
+      messagesEnd: null,
     };
     this.cable = actionCable.createConsumer(
       "wss://this-is-internet.herokuapp.com/cable"
@@ -15,8 +16,11 @@ export default class Chatbox extends Component {
   componentDidMount() {
     this.fetchMessages();
     this.createSubscription();
+    this.scrollToBottom();
   }
-
+  componentDidUpdate() {
+    this.scrollToBottom();
+  }
   fetchMessages = () => {
     fetch("https://this-is-internet.herokuapp.com/messages")
       .then((response) => response.json())
@@ -59,13 +63,21 @@ export default class Chatbox extends Component {
     fetch("https://this-is-internet.herokuapp.com/messages", fetchObj);
     e.target.reset();
   };
+  scrollToBottom = () => {
+    this.state.messagesEnd.scrollIntoView({ behavior: "smooth" });
+  };
 
   render() {
     return (
       <div className="ActionCable">
         <div className="ActionCableDiv">
           <ul className="Messages">{this.mapMessages()}</ul>
-
+          <div
+            style={{ float: "left", clear: "both" }}
+            ref={(el) => {
+              this.state.messagesEnd = el;
+            }}
+          ></div>
           <form className="ActionCableForm" onSubmit={this.handleMessageSubmit}>
             <input name="message" type="text" />
             <input type="submit" value="send message" />
