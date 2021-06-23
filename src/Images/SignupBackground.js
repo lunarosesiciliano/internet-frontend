@@ -22,7 +22,6 @@ export default function HomeBackground() {
     p5.rotate(145);
     for (let i = 0; i < 200; i++) {
       if (p5.mouseIsPressed) {
-        p5.push();
         p5.strokeWeight(2);
         p5.stroke(255, 102, 0);
         p5.rotateX(45);
@@ -37,7 +36,6 @@ export default function HomeBackground() {
         p5.triangle(i, i + 3, p5.mouseX + 2, p5.mouseY + 2, i * 2, i + 2);
       }
     }
-    p5.pop();
   };
 
   return (

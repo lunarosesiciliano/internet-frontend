@@ -22,7 +22,6 @@ export default function HomeBackground() {
     p5.rotate(45);
     for (let i = 0; i < 200; i++) {
       if (p5.mouseIsPressed) {
-        p5.push();
         p5.strokeWeight(2);
         p5.stroke(255, 0, 0);
         p5.rotateX(45);

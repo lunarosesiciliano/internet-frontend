@@ -1,8 +1,6 @@
 # The Internet
 
-The Internet was created as an experimental piece for my capstone project at Flatiron. The requirements for the project were pretty open ended: We needed to create an application with a full stack, you had to use new technology, and there had to be full Authentication.
-
-I had some incredibly ambitious ideas that I eventually had to abandon for later, and was presented with the question, "What if you only did auth?"
+The Internet was created as an experimental piece for my capstone project at Flatiron. I first started coding after a year of isolation due to COVID. As a trained artist, I knew that whatever I went "back" to had to be a creative pursuit. Little did I understand that code WAS art.
 
 # Auth
 
@@ -10,10 +8,12 @@ The core functionality of The Internet is authentication and logging in, both in
 
 # Tech
 
-The Internet was created with a React front and and a Ruby on Rails back end. Full authentication was achieved through JWT and styling was done using vanilla CSS, p5.js and react-three-fiber.js
+The Internet was created with a React front and and a Ruby on Rails back end. Full authentication was achieved through JWT and styling was done using vanilla CSS, p5.js and react-three-fiber.js. Facial recognition and machine learning was created with Tensorflow.js.
 
 # Code Example
 
 # Demo
 
 # Contact
+
+joannsiciliano.dev@gmail.com
