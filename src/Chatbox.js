@@ -11,6 +11,7 @@ export default class Chatbox extends Component {
     this.cable = actionCable.createConsumer(
       "wss://this-is-internet.herokuapp.com/cable"
     );
+    this.messagesEndRef = React.createRef();
   }
 
   componentDidMount() {
@@ -64,20 +65,17 @@ export default class Chatbox extends Component {
     e.target.reset();
   };
   scrollToBottom = () => {
-    this.state.messagesEnd.scrollIntoView({ behavior: "smooth" });
+    this.messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
   };
 
   render() {
     return (
       <div className="ActionCable">
         <div className="ActionCableDiv">
-          <ul className="Messages">{this.mapMessages()}</ul>
-          <div
-            style={{ float: "left", clear: "both" }}
-            ref={(el) => {
-              this.state.messagesEnd = el;
-            }}
-          ></div>
+          <ul className="Messages">
+            {this.mapMessages()}
+            <div ref={this.messagesEndRef}></div>
+          </ul>
           <form className="ActionCableForm" onSubmit={this.handleMessageSubmit}>
             <input name="message" type="text" />
             <input type="submit" value="send message" />
