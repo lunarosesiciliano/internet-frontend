@@ -16,7 +16,7 @@ export default function PageTwoBackground() {
   const draw = (p5) => {
     p5.background(0);
     p5.rotate(p5.sin(p5.frameCount / 6));
-    p5.rotateX(180);
+    p5.rotateX(45);
     p5.noFill();
     p5.stroke(1);
     p5.strokeWeight(1);
@@ -27,7 +27,7 @@ export default function PageTwoBackground() {
       let b = p5.map(p5.cos(p5.frameCount * 5), -1, 1, 200, 255);
 
       p5.stroke(r, g, b);
-      p5.rotateY(360);
+      p5.rotateY(45);
       p5.rotate(p5.frameCount / 8);
 
       p5.beginShape();
@@ -38,7 +38,7 @@ export default function PageTwoBackground() {
         let z = p5.sin(p5.frameCount + i) * 200;
         // p5.vertex(x, y, z);
         // p5.vertex(x, y, z * 3);
-        p5.circle(0, y + 2, z);
+        // p5.circle(0, y + 2, z);
         // p5.ellipse(x * 4, y * 4, z * 4, z * 4);
         // p5.vertex(x * 6, y * 6, z * 6);
         // p5.vertex(x * 10, y * 10, z * 10);

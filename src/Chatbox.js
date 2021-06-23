@@ -62,9 +62,8 @@ export default class Chatbox extends Component {
     return (
       <div className="ActionCable">
         <div className="ActionCableDiv">
-          <span className="Messages">
-            <ul>{this.mapMessages()}</ul>
-          </span>
+          <ul className="Messages">{this.mapMessages()}</ul>
+
           <form className="ActionCableForm" onSubmit={this.handleMessageSubmit}>
             <input name="message" type="text" />
             <input type="submit" value="send message" />

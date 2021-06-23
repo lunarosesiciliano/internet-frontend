@@ -13,7 +13,6 @@ export default function HomeBackground() {
 
     canvas.position(0, 0);
     canvas.style("z-index", "-2");
-    // p5.background(0);
   };
 
   const draw = (p5) => {

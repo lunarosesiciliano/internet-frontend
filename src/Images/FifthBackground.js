@@ -12,6 +12,10 @@ export default function FifthBackground() {
     canvas.style("z-index", "-2");
   };
   const draw = (p5) => {
+    p5.textSize(50);
+    p5.textAlign(p5.CENTER);
+    p5.fill(255);
+    p5.text("hello", 100, 100);
     p5.background(0, 0, 200);
   };
   return (

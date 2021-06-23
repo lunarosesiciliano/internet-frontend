@@ -28,7 +28,7 @@ export default function FourthPage({ logout, user }) {
           placeholder=""
         />
         <Link to="/chatroom">
-          <input type="submit" value=":)" className="LoginButton" />
+          <input type="submit" value="☺︎☻☺︎" className="LoginButton" />
         </Link>
       </form>
     </div>
