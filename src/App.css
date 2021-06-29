@@ -70,6 +70,12 @@ body {
   margin: 10px;
   margin-top: 10px;
 }
+.SignupForm input {
+  margin: 10px;
+}
+.LoginForm input {
+  margin: 10px;
+}
 .HomeLogin {
   align-content: center;
   padding: 30px;
@@ -77,6 +83,7 @@ body {
   background-color: rgba(255, 255, 255, 0);
   color: white;
 }
+
 .HomePage {
   background-color: rgba(255, 255, 255, 0);
   color: white;

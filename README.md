@@ -12,6 +12,8 @@ The Internet was created with a React front and and a Ruby on Rails back end. Fu
 
 # Code Example
 
+Using TensorFlow to create facial recognition 
+
 ```
 const webcamRef = useRef(null);
   const canvasRef = useRef(null);
@@ -66,4 +68,6 @@ const webcamRef = useRef(null);
 # Contact
 
 email: joannsiciliano.dev@gmail.com
+
+
 linkdin: https://www.linkedin.com/in/joannsiciliano/

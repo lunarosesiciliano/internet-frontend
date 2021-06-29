@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { Component } from "react";
+import React, { Component, isValidElement } from "react";
 import SignupForm from "./forms/SignupForm";
 import LoginForm from "./forms/LoginForm.js";
 import HomePage from "./Pages/HomePage.js";
@@ -57,6 +57,9 @@ class App extends Component {
     })
       .then((response) => response.json())
       .then((user) => this.setState({ user }));
+    if (user.username && user.password) {
+      this.props.history.push("/login");
+    }
   };
 
   login = (username, password) => {
@@ -89,7 +92,6 @@ class App extends Component {
   };
 
   render() {
-    console.log(this.props);
     return (
       <div className="App">
         {this.state.user.id ? (
